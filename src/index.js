@@ -14,6 +14,7 @@ class Todolist extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.addTodo = this.addTodo.bind(this);
         this.changeDone = this.changeDone.bind(this);
+        this.removeTodo = this.removeTodo.bind(this);
     }
 
     handleChange(e) {
@@ -33,21 +34,25 @@ class Todolist extends React.Component {
         };
 
         this.setState(state => ({
-            items: state.items.concat(newTodo)
+            ...state,
+            items: state.items.concat(newTodo),
         }));
 
         this.state.text = '';
     }
 
     changeDone(item_id) {
-        let status = this.state.items.find(x => x.id === item_id).isDone;
-        console.log('status: ', status)
-        status.setState({status: !status});
-        console.log('status2: ', status)
+        this.setState((prevState) => {
+            const el = prevState.items.find(({id}) => id === item_id);
+            el.isDone = !el.isDone;
+
+            return {...prevState};
+        })
     }
 
-    removeTodo(id) {
-        // console.log('11')
+    removeTodo(item_id) {
+        const remover = this.state.items.filter(item => item.id !== item_id);
+        this.setState({items: remover});
     }
 
     render() {
