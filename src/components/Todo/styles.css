@@ -1,0 +1,20 @@
+.todos {
+    list-style: none;
+    padding: 10px 5px;
+}
+
+.todos-items {
+    padding: 5px;
+    display: flex;
+    font-size: 20px;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.remove-todo {
+    margin-left: auto;
+    font-size: 15px;
+    color: red;
+}
