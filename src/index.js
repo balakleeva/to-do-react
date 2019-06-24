@@ -9,12 +9,18 @@ class Todolist extends React.Component {
         this.state = {
             items: [],
             text: '',
-            isDone: false
+            filter: "all",
         };
+
         this.handleChange = this.handleChange.bind(this);
         this.addTodo = this.addTodo.bind(this);
         this.changeDone = this.changeDone.bind(this);
         this.removeTodo = this.removeTodo.bind(this);
+    }
+
+    getTasks() {
+        const {filter, items} = this.state;
+        return items.filter((item) => ((filter === 'all') || (filter === 'completed') === item.isDone));
     }
 
     handleChange(e) {
@@ -61,11 +67,12 @@ class Todolist extends React.Component {
                 <div className="todo-list">
                     <div className="game-info">
                         <ul className="todos">
-                            {this.state.items.map(item => (
+                            {this.getTasks().map(item => (
                                 <Todo changeDone={() => this.changeDone(item.id)}
                                       isDone={item.isDone}
                                       text={item.text}
                                       id={item.id}
+                                      key={item.id}
                                       removeTodo={() => this.removeTodo(item.id)}/>
                             ))}
                         </ul>
@@ -77,6 +84,11 @@ class Todolist extends React.Component {
                         value={this.state.text}/>
 
                     <button className="add-todo-button" onClick={this.addTodo}>Add todo</button>
+                </div>
+                <div className="button-group">
+                    <button className="all-todos" onClick={() => this.setState({filter: 'all'})}>All</button>
+                    <button className="completed-todos" onClick={() => this.setState({filter: 'completed'})}>Completed</button>
+                    <button className="active-todos" onClick={() => this.setState({filter: 'active'})}>Active</button>
                 </div>
             </div>
 
