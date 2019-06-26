@@ -1,15 +1,14 @@
 import React from 'react';
 import cx from 'classnames';
-import './styles.css';
+import './styles.scss';
 
 const Todo = ({changeDone, id, text, removeTodo, isDone}) => {
     return (
         <li
-            onClick={changeDone}
             key={id}
-            className={cx('todos-item', {['done']: isDone})}
+            className={cx('todos-item', {'done': isDone})}
         >
-            {text}
+            <span onClick={changeDone}>{text}</span>
             <span onClick={removeTodo} className="remove-todo">x</span>
         </li>
     )

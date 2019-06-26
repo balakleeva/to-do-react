@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Todo from './components/Todo';
-import './index.css';
+import FilterButton from './components/FilterButton/FilterButton'
+import Header from './components/Header/Header'
+import './index.scss';
 
 class Todolist extends React.Component {
     constructor(props) {
@@ -39,12 +41,12 @@ class Todolist extends React.Component {
             id: this.state.items.length + 1
         };
 
-        this.setState(state => ({
+        this.setState((state) => ({
             ...state,
             items: state.items.concat(newTodo),
+            text: ''
         }));
 
-        this.state.text = '';
     }
 
     changeDone(item_id) {
@@ -57,14 +59,16 @@ class Todolist extends React.Component {
     }
 
     removeTodo(item_id) {
-        const remover = this.state.items.filter(item => item.id !== item_id);
-        this.setState({items: remover});
+        this.setState({
+            items: this.state.items.filter((item) => item.id !== item_id)
+        })
     }
 
     render() {
         return (
             <div className="container">
                 <div className="todo-list">
+                    <Header filter={this.state.filter} items={this.state.items}/>
                     <div className="game-info">
                         <ul className="todos">
                             {this.getTasks().map(item => (
@@ -83,12 +87,19 @@ class Todolist extends React.Component {
                         onChange={this.handleChange}
                         value={this.state.text}/>
 
-                    <button className="add-todo-button" onClick={this.addTodo}>Add todo</button>
-                </div>
-                <div className="button-group">
-                    <button className="all-todos" onClick={() => this.setState({filter: 'all'})}>All</button>
-                    <button className="completed-todos" onClick={() => this.setState({filter: 'completed'})}>Completed</button>
-                    <button className="active-todos" onClick={() => this.setState({filter: 'active'})}>Active</button>
+                    <button className="add-todo-button" onClick={this.addTodo}>+</button>
+
+                    <div className="button-group">
+                        <FilterButton text="All" filter={this.state.filter}
+                                      changeFilter={() => this.setState({filter: 'all'})}/>
+
+                        <FilterButton text="Completed" filter={this.state.filter}
+                                      changeFilter={() => this.setState({filter: 'completed'})}/>
+
+                        <FilterButton text="Active" filter={this.state.filter}
+                                      changeFilter={() => this.setState({filter: 'active'})}/>
+                    </div>
+
                 </div>
             </div>
 
