@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-list {
+  padding: 25px;
+  border-radius: 5px;
+  background-color: beige;
+}
+
+.input-todo {
+  border-radius: 3px;
+  padding: 5px;
+  background: white;
+  outline: none;
+  border: 1px solid #ced4da;
+}
+
+.add-todo-button {
+  background-color: white;
+  margin: 5px;
+  outline: none;
+  border: 1px solid #d9534f;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+
+  &:hover {
+    background-color: #d9534f;
+    color: white;
+  }
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+}
+
