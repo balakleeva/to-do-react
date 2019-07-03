@@ -5,13 +5,14 @@ const initState = {
     currentFilter: 'all',
 };
 
-export default function (state = initState, {type, payload}) {
-    switch (type) {
+export default function (state = initState, action) {
+    switch (action.type) {
         case Types.ITEMS_ADD_TODO:
             return {
                 ...state,
                 TodoList: [...state.TodoList, {
-                    ...payload,
+                    id: action.id,
+                    text: action.text,
                 }]
             };
 

@@ -6,11 +6,12 @@ import { Provider } from 'react-redux'
 import TodoList from './components/TodoList'
 import appStore from './reducers'
 
-const store = createStore(appStore,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(appStore);
+const rootElement = document.getElementById('root')
 
 ReactDOM.render(
     <Provider store={store}>
         <TodoList />,
     </Provider>,
-    document.getElementById('root')
+    rootElement
 );

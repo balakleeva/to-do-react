@@ -4,9 +4,17 @@ import Header from "../Header/Header";
 import Todo from "../Todo";
 import FilterButton from "../FilterButton/FilterButton";
 import {connect} from "react-redux";
-import {addTodo, removeTodo} from "../../reducers/items/actions";
+import { removeTodo } from "../../reducers/items/actions";
+import AddTodo from "../../containers/AddTodo";
 
 class TodoList extends React.Component {
+
+    getCurrentStateFromStore() {
+        return {
+            items: this.props.items,
+            filter: this.props.filter
+        }
+    }
     constructor(props) {
         super(props);
         this.state = {
@@ -16,38 +24,17 @@ class TodoList extends React.Component {
         };
 
         this.handleChange = this.handleChange.bind(this);
-        this.addTodo = this.addTodo.bind(this);
         this.changeDone = this.changeDone.bind(this);
         this.removeTodo = this.removeTodo.bind(this);
     }
 
     getTasks() {
-        const {filter, items} = this.state;
-        return items.filter((item) => ((filter === 'all') || (filter === 'completed') === item.isDone));
+        const {filter} = this.state;
+        return this.props.items.TodoList.filter((item) => ((filter === 'all') || (filter === 'completed') === item.isDone));
     }
 
     handleChange(e) {
         this.setState({text: e.target.value});
-    }
-
-    addTodo() {
-        if (this.state.text.length === 0) {
-            alert("Write todo!");
-            return
-        }
-
-        const newTodo = {
-            text: this.state.text,
-            isDone: false,
-            id: this.state.items.length + 1
-        };
-
-        this.setState((state) => ({
-            ...state,
-            items: state.items.concat(newTodo),
-            text: ''
-        }));
-
     }
 
     changeDone(item_id) {
@@ -66,11 +53,11 @@ class TodoList extends React.Component {
     }
 
     render() {
-        console.log('.........................', this.props)
+        console.log('.........................', this.getCurrentStateFromStore())
         return (
             <div className="container">
                 <div className="todo-list">
-                    <Header filter={this.state.filter} items={this.state.items}/>
+                    <Header filter={this.props.filter} items={this.props.items.TodoList}/>
                     <div className="game-info">
                         <ul className="todos">
                             {this.getTasks().map(item => (
@@ -83,13 +70,8 @@ class TodoList extends React.Component {
                             ))}
                         </ul>
                     </div>
-                    <input
-                        className="input-todo"
-                        placeholder="Add todo"
-                        onChange={this.handleChange}
-                        value={this.state.text}/>
 
-                    <button className="add-todo-button" onClick={this.addTodo}>+</button>
+                    <AddTodo/>
 
                     <div className="button-group">
                         <FilterButton text="All" filter={this.state.filter}
@@ -110,13 +92,12 @@ class TodoList extends React.Component {
 }
 
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
     items: state.items,
     filtersList: state.filter,
 });
 const mapDispatchToProps = (dispatch) => ({
-    addTodo: (params) => dispatch(addTodo(params)),
-    removeTodo: (params) => dispatch(removeTodo(params))
+    removeTodo: (params) => dispatch(removeTodo(params)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

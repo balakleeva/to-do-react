@@ -1,9 +1,12 @@
 import * as Types from './types'
 
+let initID = 1;
+
 export function addTodo(text) {
     return {
         type: Types.ITEMS_ADD_TODO,
-        payload: text,
+        id: initID++,
+        text: text,
     }
 }
 
