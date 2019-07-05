@@ -12,6 +12,8 @@ export default function (state = initState, action) {
                 alert('Write TODO!');
                 return {...state}
             }
+            fetch(`/api/todos?text=${encodeURIComponent(action.text)}&id=${action.id}`)
+                .then(response => response.json());
             return {
                 ...state,
                 TodoList: [...state.TodoList, {

@@ -13,7 +13,7 @@ const Todo = ({changeDone, id, text, removeTodo, isDone}) => {
             className={cx('todos-item', {'done': isDone})}
         >
             <span onClick={() => changeDone(id)}>{text}</span>
-            <Icon type="delete" className="remove-icon" onClick={() => removeTodo(id)} className="remove-todo" />
+            <Icon type="delete" onClick={() => removeTodo(id)} className="remove-todo" />
         </li>
     )
 };

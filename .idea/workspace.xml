@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a1ba574-6953-412a-99c5-ffc9dca5059b" name="Default Changelist" comment="with redux!">
-      <change afterPath="$PROJECT_DIR$/src/containers/AddTodo/styles.scss" afterDir="false" />
+    <list default="true" id="3a1ba574-6953-412a-99c5-ffc9dca5059b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/styles.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Todo/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Todo/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Todo/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Todo/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TodoList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoList/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TodoList/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoList/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AddTodo/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AddTodo/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/FilterButton/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/FilterButton/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/FilterButton/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/FilterButton/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/items/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/items/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/AddTodo/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
-              <caret line="29" column="53" lean-forward="true" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+            <state relative-caret-position="722">
+              <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -42,10 +34,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/AddTodo/styles.scss">
+        <entry file="file://$PROJECT_DIR$/src/reducers/items/actions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+            <state relative-caret-position="92">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/reducers/items/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="15" column="51" lean-forward="true" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -71,6 +81,7 @@
       <find>.btn</find>
       <find>button-group</find>
       <find>.todos</find>
+      <find>prox</find>
     </findStrings>
     <replaceStrings>
       <replace>TodoList</replace>
@@ -106,10 +117,8 @@
         <option value="$PROJECT_DIR$/src/reducers/items/actions.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/containers/FilterButton/index.js" />
-        <option value="$PROJECT_DIR$/src/reducers/items/index.js" />
         <option value="$PROJECT_DIR$/src/index.scss" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/components/Todo/index.js" />
         <option value="$PROJECT_DIR$/src/components/TodoList/index.js" />
         <option value="$PROJECT_DIR$/src/containers/FilterButton/styles.scss" />
         <option value="$PROJECT_DIR$/src/components/TodoList/styles.scss" />
@@ -118,6 +127,10 @@
         <option value="$PROJECT_DIR$/src/components/Header/styles.scss" />
         <option value="$PROJECT_DIR$/src/containers/AddTodo/index.js" />
         <option value="$PROJECT_DIR$/src/containers/AddTodo/styles.scss" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/components/Todo/index.js" />
+        <option value="$PROJECT_DIR$/src/reducers/items/index.js" />
+        <option value="$PROJECT_DIR$/server/index.js" />
       </list>
     </option>
   </component>
@@ -143,54 +156,12 @@
             <path>
               <item name="to-do-list" type="b2602c69:ProjectViewProjectNode" />
               <item name="to-do-list" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="to-do-list" type="b2602c69:ProjectViewProjectNode" />
               <item name="to-do-list" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="to-do-list" type="b2602c69:ProjectViewProjectNode" />
-              <item name="to-do-list" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Header" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="to-do-list" type="b2602c69:ProjectViewProjectNode" />
-              <item name="to-do-list" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Todo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="to-do-list" type="b2602c69:ProjectViewProjectNode" />
-              <item name="to-do-list" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="TodoList" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="to-do-list" type="b2602c69:ProjectViewProjectNode" />
-              <item name="to-do-list" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="to-do-list" type="b2602c69:ProjectViewProjectNode" />
-              <item name="to-do-list" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="AddTodo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="to-do-list" type="b2602c69:ProjectViewProjectNode" />
-              <item name="to-do-list" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="FilterButton" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="to-do-list" type="b2602c69:ProjectViewProjectNode" />
@@ -275,7 +246,7 @@
       <workItem from="1562153867680" duration="7479000" />
       <workItem from="1562229067230" duration="12000" />
       <workItem from="1562229114201" duration="15000" />
-      <workItem from="1562315089659" duration="17823000" />
+      <workItem from="1562315089659" duration="19684000" />
     </task>
     <task id="LOCAL-00001" summary="0.6">
       <created>1561130845497</created>
@@ -319,11 +290,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562327855806</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="design for todo">
+      <created>1562334659794</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1562334659794</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67035000" />
+    <option name="totallyTimeSpent" value="68896000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -389,17 +367,10 @@
     <MESSAGE value="0.9" />
     <MESSAGE value="0.91" />
     <MESSAGE value="with redux!" />
-    <option name="LAST_COMMIT_MESSAGE" value="with redux!" />
+    <MESSAGE value="design for todo" />
+    <option name="LAST_COMMIT_MESSAGE" value="design for todo" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/actions.js" />
     <entry file="file://$PROJECT_DIR$/src/reducers/filtersList.js" />
     <entry file="file://$PROJECT_DIR$/src/reducers/items.js" />
@@ -407,13 +378,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
           <caret line="23" selection-start-line="23" selection-end-line="27" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -598,30 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/items/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/items/actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Todo/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/TodoList/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1127">
@@ -680,6 +620,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AddTodo/styles.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -687,13 +634,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Todo/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AddTodo/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="29" column="53" lean-forward="true" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+        <state relative-caret-position="722">
+          <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/items/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/items/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="15" column="51" lean-forward="true" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
         </state>
       </provider>
     </entry>
