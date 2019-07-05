@@ -1,6 +1,6 @@
 .todos {
   list-style: none;
-  padding: 10px 5px;
+  padding: 5% 10%;
 }
 
 .todos-item {
@@ -17,4 +17,10 @@
   margin-left: auto;
   font-size: 15px;
   color: red;
+}
+
+.remove-icon {
+  &:hover {
+    color: red;
+  }
 }

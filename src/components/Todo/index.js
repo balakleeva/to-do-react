@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 import {connect} from "react-redux";
 import { changeDone, removeTodo} from "../../reducers/items/actions";
+import { Icon } from "antd";
 
 const Todo = ({changeDone, id, text, removeTodo, isDone}) => {
     return (
@@ -12,7 +13,7 @@ const Todo = ({changeDone, id, text, removeTodo, isDone}) => {
             className={cx('todos-item', {'done': isDone})}
         >
             <span onClick={() => changeDone(id)}>{text}</span>
-            <span onClick={() => removeTodo(id)} className="remove-todo">x</span>
+            <Icon type="delete" className="remove-icon" onClick={() => removeTodo(id)} className="remove-todo" />
         </li>
     )
 };

@@ -1,0 +1,19 @@
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-todo-button {
+  position: relative;
+  padding: 5% !important;
+  margin: 0 2%;
+  border-radius: 50%;
+}
+
+.button-text {
+  position: absolute;
+  top: 17%;
+  right: 34%;
+  font-size: 30px;
+}

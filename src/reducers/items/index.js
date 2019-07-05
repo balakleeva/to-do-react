@@ -8,6 +8,10 @@ const initState = {
 export default function (state = initState, action) {
     switch (action.type) {
         case Types.ITEMS_ADD_TODO:
+            if (action.text === '') {
+                alert('Write TODO!');
+                return {...state}
+            }
             return {
                 ...state,
                 TodoList: [...state.TodoList, {

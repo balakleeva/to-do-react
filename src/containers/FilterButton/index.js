@@ -2,8 +2,8 @@ import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import './styles.scss'
-import {connect} from "react-redux";
-import {changeFilter} from "../../reducers/filtersList/actions";
+import { connect } from "react-redux";
+import { changeFilter } from "../../reducers/filtersList/actions";
 
 const FilterButton = ({ filter, children, changeFilter }) => {
     return (

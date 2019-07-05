@@ -1,6 +1,8 @@
 import React, {useState, useCallback} from 'react';
+import './styles.scss';
 import {connect} from "react-redux";
 import {addTodo} from "../../reducers/items/actions";
+import {Input, Button} from 'antd';
 
 const AddTodo = ({addTodo}) => {
     const [text, setText] = useState('');
@@ -11,18 +13,22 @@ const AddTodo = ({addTodo}) => {
     }, [addTodo]);
 
     return (
-        <div>
-            <input onChange={e => setText(e.target.value)}
+        <div className="input-container">
+            <Input onChange={e => setText(e.target.value)}
                    value={text}
                    className="input-todo"
                    placeholder="Add todo"
+                   style={{ width: '70%' }}
             />
 
-            <button className="add-todo-button"
-                    onClick={() => handleClick(text)}
+            <Button
+                type="primary"
+                shape="circle"
+                className="add-todo-button"
+                onClick={() => handleClick(text)}
             >
-                +
-            </button>
+                <span className="button-text">+</span>
+            </Button>
         </div>
     )
 };
