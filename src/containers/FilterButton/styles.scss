@@ -14,10 +14,10 @@
     }
   }
 
-  &.Completed {
+  &.Done {
     border: 1px solid #5cb85c;
 
-    &:hover, &.select-completed {
+    &:hover, &.select-done {
       background-color: #5cb85c;
       color: white;
     }

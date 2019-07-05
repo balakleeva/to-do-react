@@ -13,6 +13,13 @@ export function addTodo(text) {
 export function removeTodo(itemID) {
     return {
         type: Types.ITEMS_REMOVE_TODO,
-        payload: itemID,
+        id: itemID,
+    }
+}
+
+export function changeDone(itemID) {
+    return {
+        type: Types.ITEMS_CHANGE_DONE,
+        id: itemID,
     }
 }

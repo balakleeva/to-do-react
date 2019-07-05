@@ -1,26 +1,38 @@
-import React from 'react';
+import React, {useState, useCallback} from 'react';
 import {connect} from "react-redux";
-import { addTodo } from "../../reducers/items/actions";
+import {addTodo} from "../../reducers/items/actions";
 
-const AddTodo = (props) => {
+const AddTodo = ({addTodo}) => {
+    const [text, setText] = useState('');
+
+    const handleClick = useCallback((text) => {
+        addTodo(text);
+        setText('')
+    }, [addTodo]);
+
     return (
         <div>
-            <input
-                className="input-todo"
-                placeholder="Add todo"
+            <input onChange={e => setText(e.target.value)}
+                   value={text}
+                   className="input-todo"
+                   placeholder="Add todo"
             />
 
-            <button className="add-todo-button" onClick={props.addTodo}>+</button>
+            <button className="add-todo-button"
+                    onClick={() => handleClick(text)}
+            >
+                +
+            </button>
         </div>
     )
 };
 
 const mapStateToProps = (state) => ({
     items: state.items,
-    filtersList: state.filter,
 });
+
 const mapDispatchToProps = (dispatch) => ({
-    addTodo: (params) => dispatch(addTodo("qwerty")),
+    addTodo: (params) => dispatch(addTodo(params)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddTodo);
