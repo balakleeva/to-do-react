@@ -17,6 +17,10 @@ class TodoList extends React.Component {
         return items.TodoList.filter((item) => ((filtersList === 'SHOW_ALL') || (filtersList === 'SHOW_DONE') === item.isDone));
     }
 
+    componentDidMount() {
+        // TODO request
+    }
+
     render() {
         console.log('.........................', this.props)
         return (

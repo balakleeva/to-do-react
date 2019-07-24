@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import TodoList from './components/TodoList'
-import appStore from './reducers'
+import configureStore from './configureStore'
 
-const store = createStore(appStore);
+const store = configureStore()
 const rootElement = document.getElementById('root')
 
 ReactDOM.render(

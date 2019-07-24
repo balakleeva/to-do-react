@@ -7,6 +7,7 @@ import {Input, Button} from 'antd';
 const AddTodo = ({addTodo}) => {
     const [text, setText] = useState('');
 
+
     const handleClick = useCallback((text) => {
         addTodo(text);
         setText('')

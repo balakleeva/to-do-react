@@ -1,8 +1,16 @@
-var express = require('express');
-var app = express();
-app.get('/', function (req, res) {
-    res.send('Hello World!');
-});
-app.listen(3001, function () {
-    console.log('Example app listening on port 3000!')
+import routes from './routes'
+
+const mongoose = require('mongoose');
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+mongoose.connect('mongodb://localhost/application');
+
+routes(app);
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
+app.listen(3001, () => {
+    console.log('Server starts!')
 });
