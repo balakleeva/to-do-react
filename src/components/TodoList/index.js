@@ -8,17 +8,17 @@ import AddTodo from "../../containers/AddTodo";
 import {filtersList} from '../../reducers/filtersList/types'
 import {Layout} from "antd";
 import "antd/dist/antd.css";
+import { fetchTodos } from "../../reducers/items/actions";
 
 class TodoList extends React.Component {
 
-    getTasks() {
-        const {items, filtersList} = this.props;
-        console.log('items.TodoList', items.TodoList);
-        return items.TodoList.filter((item) => ((filtersList === 'SHOW_ALL') || (filtersList === 'SHOW_DONE') === item.isDone));
+    componentDidMount() {
+        this.getTasks()
     }
 
-    componentDidMount() {
-        // TODO request
+    getTasks() {
+        const {items, filtersList} = this.props;
+        return items.TodoList.filter((item) => ((filtersList === 'SHOW_ALL') || (filtersList === 'SHOW_DONE') === item.isDone));
     }
 
     render() {
@@ -62,4 +62,8 @@ const mapStateToProps = (state) => ({
     filtersList: state.filtersList.filter,
 });
 
-export default connect(mapStateToProps)(TodoList);
+const mapDispatchToProps = (dispatch) => ({
+    getTasks: (params) => dispatch(fetchTodos(params)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

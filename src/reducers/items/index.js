@@ -37,6 +37,12 @@ export default function (state = initState, action) {
                 )]
             };
 
+        case Types.START_LOADING_ALL_TODOS:
+            console.log('START_LOADING_ALL_TODOS');
+            return {
+                ...state
+            };
+
         default:
             return state
     }

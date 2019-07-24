@@ -2,6 +2,7 @@ import TodoModel from '../models/todo_model';
 
 class TodoController {
     index(req, res) {
+        console.log('Request: ', req)
         TodoModel.find().then((err, todos) => {
             if (err) {
                 res.send(err);
@@ -12,6 +13,7 @@ class TodoController {
     }
 
     create(req, res) {
+        console.log('Add request', req)
         const data = req.body;
 
         const todo = new TodoModel({
@@ -19,8 +21,11 @@ class TodoController {
             isDone: false,
         });
 
-        todo.save().then(() => {
-            res.json({status: 'ok'});
+        todo.save()
+            .then(() => {
+                res.json({status: 'ok'});
+            }).catch((err) => {
+            console.log('Error: ', err)
         });
     }
 

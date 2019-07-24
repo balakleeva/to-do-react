@@ -1,7 +1,7 @@
 import React, {useState, useCallback} from 'react';
 import './styles.scss';
 import {connect} from "react-redux";
-import {addTodo} from "../../reducers/items/actions";
+import {createTodo} from "../../reducers/items/actions";
 import {Input, Button} from 'antd';
 
 const AddTodo = ({addTodo}) => {
@@ -19,7 +19,7 @@ const AddTodo = ({addTodo}) => {
                    value={text}
                    className="input-todo"
                    placeholder="Add todo"
-                   style={{ width: '70%' }}
+                   style={{width: '70%'}}
             />
 
             <Button
@@ -39,7 +39,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    addTodo: (params) => dispatch(addTodo(params)),
+    addTodo: (params) => dispatch(createTodo(params)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddTodo);

@@ -3,7 +3,7 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import './styles.scss';
 import {connect} from "react-redux";
-import { changeDone, removeTodo} from "../../reducers/items/actions";
+import { deleteTodo, changeStatus } from "../../reducers/items/actions";
 import { Icon } from "antd";
 
 const Todo = ({changeDone, id, text, removeTodo, isDone}) => {
@@ -31,8 +31,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    removeTodo: (params) => dispatch(removeTodo(params)),
-    changeDone: (params) => dispatch(changeDone(params))
+    removeTodo: (params) => dispatch(deleteTodo(params)),
+    changeDone: (params) => dispatch(changeStatus(params))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(React.memo(Todo));
