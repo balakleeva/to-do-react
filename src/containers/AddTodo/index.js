@@ -1,7 +1,7 @@
 import React, {useState, useCallback} from 'react';
 import './styles.scss';
 import {connect} from "react-redux";
-import {createTodo} from "../../reducers/items/actions";
+import {addTodo} from "../../reducers/items/actions";
 import {Input, Button} from 'antd';
 
 const AddTodo = ({addTodo}) => {
@@ -9,7 +9,7 @@ const AddTodo = ({addTodo}) => {
 
 
     const handleClick = useCallback((text) => {
-        addTodo(text);
+        addTodo({text: text});
         setText('')
     }, [addTodo]);
 
@@ -39,7 +39,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    addTodo: (params) => dispatch(createTodo(params)),
+    addTodo: (params) => dispatch(addTodo(params)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddTodo);

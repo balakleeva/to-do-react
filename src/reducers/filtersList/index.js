@@ -1,13 +1,9 @@
 import * as Types from './types'
 
-const initState = {
-    filter: 'SHOW_ALL',
-};
-
-export default function (state = initState, { type, payload }) {
-    switch (type) {
-        case Types.filtersList:
-            return {...state, filter: payload };
+export default function (state = Types.filtersList.SHOW_ALL, action) {
+    switch (action.type) {
+        case Types.CHANGE_FILTER:
+            return action.filter;
         default:
             return state;
     }

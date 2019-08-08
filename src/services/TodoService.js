@@ -4,13 +4,13 @@ export default {
     fetchAll() {
         return ApiService.get('/todos');
     },
-    deleteTodo(id) {
-        return ApiService.delete('/todos/' + id);
+    deleteTodo(params) {
+        return ApiService.delete('/todos/' + params);
     },
-    changeTodo(id) {
-        return ApiService.post('/todos/' + id)
+    changeTodo(params) {
+        return ApiService.post('/todos/' + params)
     },
-    createTodo() {
-        return ApiService.createTodo('/add')
+    createTodo(params) {
+        return ApiService.post('/add-todo', params)
     }
 }

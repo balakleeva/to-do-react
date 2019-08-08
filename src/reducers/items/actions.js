@@ -1,40 +1,14 @@
 import * as Types from './types'
 
-let initID = 1;
-
-// export function addTodo(text) {
-//     return {
-//         type: Types.ITEMS_ADD_TODO,
-//         id: initID++,
-//         text: text,
-//     }
-// }
-//
-// export function removeTodo(itemID) {
-//     return {
-//         type: Types.ITEMS_REMOVE_TODO,
-//         id: itemID,
-//     }
-// }
-//
-// export function changeDone(itemID) {
-//     return {
-//         type: Types.ITEMS_CHANGE_DONE,
-//         id: itemID,
-//     }
-// }
-
 export const fetchTodos = () => (dispatch, getState, api) => {
-    console.log('dispatch')
     dispatch({
         type: Types.START_LOADING_ALL_TODOS
     });
 
     return api.todo.fetchAll().then(response => {
-        console.log('response in dispatch', response);
         dispatch({
             type: Types.SUCCESS_LOADING_ALL_TODOS,
-            payload: response.data,
+            payload: response,
         })
     }).catch((err) => {
         dispatch({
@@ -50,11 +24,10 @@ export const changeStatus = (params) => (dispath, getState, api) => {
         payload: params,
     });
 
-    return api.todo.changeTodo(params.id).then(response => {
-        console.log('response', response)
+    return api.todo.changeTodo(params).then(response => {
         dispath({
             type: Types.ITEMS_CHANGE_DONE_SUCCESS,
-            payload: response.data
+            payload: response
         })
     }).catch((err) => {
       dispath({
@@ -64,26 +37,27 @@ export const changeStatus = (params) => (dispath, getState, api) => {
     })
 };
 
-export const deleteTodo = (params) => (dispath, getState, api) => {
-    dispath({
+export const deleteTodo = (params) => (dispatch, getState, api) => {
+    dispatch({
         type: Types.ITEMS_REMOVE_TODO,
         payload: params,
     });
 
-    return api.todo.deleteTodo(params.id).then(response => {
-        dispath({
+    return api.todo.deleteTodo(params).then(response => {
+        console.log('---1111111111')
+        dispatch({
             type: Types.ITEMS_REMOVE_TODO_SUCCESS,
-            payload: response.data
+            payload: params
         })
     }).catch((err) => {
-        dispath({
+        dispatch({
             type: Types.ITEMS_REMOVE_TODO_ERROR,
             payload: err
         })
     })
 };
 
-export const createTodo = (params) => (dispatch, getState, api) => {
+export const addTodo = (params) => (dispatch, getState, api) => {
     dispatch({
         type: Types.ITEMS_ADD_TODO,
         payload: params
@@ -92,7 +66,7 @@ export const createTodo = (params) => (dispatch, getState, api) => {
     return api.todo.createTodo(params).then(response => {
         dispatch({
             type: Types.ITEMS_ADD_TODO_SUCCESS,
-            payload: response.data
+            payload: response
         })
     }).catch((err) => {
         dispatch({

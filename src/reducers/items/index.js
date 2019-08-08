@@ -1,46 +1,100 @@
 import * as Types from './types'
 
 const initState = {
-    TodoList: [],
-    currentFilter: 'all',
+    todoList: [],
+    isLoading: false,
+    error: false
 };
 
-export default function (state = initState, action) {
-    switch (action.type) {
+export default function (state = initState, {type, payload}) {
+    switch (type) {
+        case Types.START_LOADING_ALL_TODOS: {
+            return {
+                ...state,
+                isLoading: true
+            }
+        }
+
+        case Types.SUCCESS_LOADING_ALL_TODOS: {
+            return {
+                ...state,
+                todoList: payload
+            }
+        }
+
+        case Types.ERROR_IN_LOADING_ALL_TODOS: {
+            return {
+                ...state,
+                error: true
+            }
+        }
+
         case Types.ITEMS_ADD_TODO:
-            if (action.text === '') {
+            return {
+                ...state,
+                isLoading: true
+            }
+
+        case Types.ITEMS_ADD_TODO_ERROR:
+            return {
+                ...state,
+                error: true
+            }
+
+        case Types.ITEMS_ADD_TODO_SUCCESS:
+            if (payload.text === '') {
                 alert('Write TODO!');
                 return {...state}
             }
             return {
                 ...state,
-                TodoList: [...state.TodoList, {
-                    id: action.id,
-                    text: action.text,
-                    isDone: false,
+                todoList: [...state.todoList, {
+                    _id: payload._id,
+                    text: payload.text,
+                    isDone: payload.isDone,
                 }]
             };
 
         case Types.ITEMS_REMOVE_TODO:
             return {
                 ...state,
-                TodoList: [...state.TodoList.filter(item => item.id !== action.id)]
+                todoList: [...state.todoList.filter(item => item._id !== payload)],
+                isLoading: true
             };
+
+        case Types.ITEMS_REMOVE_TODO_SUCCESS:
+            return {
+                ...state
+            }
+
+
+        case Types.ITEMS_REMOVE_TODO_ERROR:
+            return {
+                ...state,
+                error: true
+            }
+
 
         case Types.ITEMS_CHANGE_DONE:
             return {
                 ...state,
-                TodoList: [...state.TodoList.map(item =>
-                    item.id === action.id ?
+                todoList: [...state.todoList.map(item =>
+                    item._id === payload ?
                         {...item, isDone: !item.isDone} :
                         item
-                )]
+                )],
+                isLoading: true
             };
 
-        case Types.START_LOADING_ALL_TODOS:
-            console.log('START_LOADING_ALL_TODOS');
+        case Types.ITEMS_CHANGE_DONE_ERROR:
             return {
-                ...state
+                ...state,
+                error: true
+            }
+
+        case Types.ITEMS_CHANGE_DONE_SUCCESS:
+            return {
+                ...state,
             };
 
         default:

@@ -20,19 +20,15 @@ const Todo = ({changeDone, id, text, removeTodo, isDone}) => {
 
 Todo.propTypes = {
     changeDone: PropTypes.func,
-    id: PropTypes.number,
+    id: PropTypes.string,
     text: PropTypes.string,
     removeTodo: PropTypes.func,
     isDone: PropTypes.bool,
 };
-
-const mapStateToProps = (state, ownProps) => ({
-    items: state.items
-});
 
 const mapDispatchToProps = (dispatch) => ({
     removeTodo: (params) => dispatch(deleteTodo(params)),
     changeDone: (params) => dispatch(changeStatus(params))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(React.memo(Todo));
+export default connect(null, mapDispatchToProps)(Todo);

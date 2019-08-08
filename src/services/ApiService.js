@@ -1,37 +1,75 @@
 // fetch
 // тут сделать подставку токена
-import axios from "axios";
+import qs from 'qs'
+
+const CONTENT_TYPE_JSON = 'application/json';
+
+export function prepareQueryString(params) {
+    return qs.stringify(params, {encode: false, arrayFormat: 'brackets'});
+}
+
+export function parseQueryString(queryString) {
+    return qs.parse(queryString, {ignoreQueryPrefix: true});
+}
 
 class ApiService {
-    get(url) {
-        axios.get(url)
+    getLink(url, params) {
+        return url + (params ? '?' + prepareQueryString(params) : '');
+    }
+
+    call(url, method, options = {}, params = null) {
+        const headers = options.headers;
+        for (let headerKey in (options.headers || {})) {
+            if (options.headers.hasOwnProperty(headerKey)) {
+                headers[headerKey] = options.headers[headerKey];
+            }
+        }
+        options.headers = headers;
+        options.method = method;
+        options.credentials = 'include';
+
+        return fetch(this.getLink(url, params), options)
             .then(response => {
-                return response
+                let result;
+                const contentType = response.headers.get('Content-Type');
+                if (contentType && contentType.includes(CONTENT_TYPE_JSON)) {
+                    result = response.json();
+                } else {
+                    result = response.text();
+                }
+
+                return Promise.all([result, response.status]);
+            })
+            .then(([data, status]) => {
+                if (status >= 500 || [400, 401, 402, 403, 404].includes(status)) {
+                    return Promise.reject(data);
+                }
+
+                if (status === 200) {
+                    return (typeof data.data === 'undefined') ? data : data.data;
+                } else {
+                    return Promise.reject(data.error || data);
+                }
             })
     }
 
-    createTodo(url) {
-        axios.post(url)
-            .then(response => {
-                return response
-            }).catch((err) => {
-                console.log('Error:', err)
-                return err
-        })
+    get(url, params = null, options = {}) {
+        return this.call(url, 'GET', options, params);
     }
 
-    post(url) {
-        axios.post(url)
-            .then(response => {
-                return response
-            })
+    post(url, data = null, options = {}) {
+        if (data) {
+            options.body = JSON.stringify(data);
+            options.headers = {
+                'Content-Type': CONTENT_TYPE_JSON,
+            };
+        }
+
+        return this.call(url, 'POST', options)
     }
 
     delete(url) {
-        axios.delete(url)
-            .then(response => {
-                return response
-            })
+        return this.call(url, 'DELETE');
     }
 }
 
