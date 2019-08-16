@@ -1,0 +1,30 @@
+.toastr-container {
+  position: absolute;
+  bottom: 2%;
+  right: 1%;
+  width: 15%;
+  height: 15%;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+
+  &.error {
+    border-left: 2px solid red;
+  }
+
+  &.success {
+    border-left: 2px solid green;
+  }
+
+  .toastr-message {
+    display: flex;
+    flex-direction: column;
+
+    .message-title {
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+}

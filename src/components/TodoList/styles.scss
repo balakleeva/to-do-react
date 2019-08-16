@@ -1,22 +1,25 @@
-.wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+.layout {
+  height: 100%;
 
-.container {
-  width: 35%;
-}
+  .wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.todo-list {
-  padding: 25px;
-  border-radius: 15px;
-  background-color: white;
-}
+  .container {
+    width: 35%;
+  }
 
-.button-group {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
+  .todo-list {
+    padding: 2% 5%;
+    border-radius: 15px;
+    background-color: white;
+  }
 
+  .button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}

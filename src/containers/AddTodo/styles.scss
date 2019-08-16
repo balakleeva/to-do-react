@@ -6,14 +6,24 @@
 
 .add-todo-button {
   position: relative;
-  padding: 5% !important;
-  margin: 0 2%;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: 1px solid #007bff;
+  color: #007bff;
   border-radius: 50%;
+  margin-left: 25px;
+  outline: none;
+
+  &:hover {
+    background-color: #007bff;
+    color: white;
+  }
 }
 
 .button-text {
   position: absolute;
-  top: 17%;
-  right: 34%;
+  top: 5%;
+  right: 30%;
   font-size: 30px;
 }

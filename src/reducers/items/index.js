@@ -18,6 +18,7 @@ export default function (state = initState, {type, payload}) {
         case Types.SUCCESS_LOADING_ALL_TODOS: {
             return {
                 ...state,
+                isLoading: false,
                 todoList: payload
             }
         }
@@ -25,6 +26,7 @@ export default function (state = initState, {type, payload}) {
         case Types.ERROR_IN_LOADING_ALL_TODOS: {
             return {
                 ...state,
+                isLoading: false,
                 error: true
             }
         }
@@ -38,6 +40,7 @@ export default function (state = initState, {type, payload}) {
         case Types.ITEMS_ADD_TODO_ERROR:
             return {
                 ...state,
+                isLoading: false,
                 error: true
             }
 
@@ -48,6 +51,7 @@ export default function (state = initState, {type, payload}) {
             }
             return {
                 ...state,
+                isLoading: false,
                 todoList: [...state.todoList, {
                     _id: payload._id,
                     text: payload.text,
@@ -64,13 +68,15 @@ export default function (state = initState, {type, payload}) {
 
         case Types.ITEMS_REMOVE_TODO_SUCCESS:
             return {
-                ...state
+                ...state,
+                isLoading: false,
             }
 
 
         case Types.ITEMS_REMOVE_TODO_ERROR:
             return {
                 ...state,
+                isLoading: false,
                 error: true
             }
 
@@ -89,12 +95,14 @@ export default function (state = initState, {type, payload}) {
         case Types.ITEMS_CHANGE_DONE_ERROR:
             return {
                 ...state,
+                isLoading: false,
                 error: true
             }
 
         case Types.ITEMS_CHANGE_DONE_SUCCESS:
             return {
                 ...state,
+                isLoading: false,
             };
 
         default:

@@ -8,10 +8,6 @@ export function prepareQueryString(params) {
     return qs.stringify(params, {encode: false, arrayFormat: 'brackets'});
 }
 
-export function parseQueryString(queryString) {
-    return qs.parse(queryString, {ignoreQueryPrefix: true});
-}
-
 class ApiService {
     getLink(url, params) {
         return url + (params ? '?' + prepareQueryString(params) : '');

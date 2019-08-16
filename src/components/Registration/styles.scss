@@ -1,0 +1,32 @@
+.registration-wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .registration-container {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+
+    .registration-input-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 20px;
+
+      .registration-input {
+        margin-bottom: 5px;
+      }
+    }
+
+    .login-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  }
+}

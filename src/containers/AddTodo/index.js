@@ -1,8 +1,8 @@
-import React, {useState, useCallback} from 'react';
+import React, { useState, useCallback } from 'react';
 import './styles.scss';
-import {connect} from "react-redux";
-import {addTodo} from "../../reducers/items/actions";
-import {Input, Button} from 'antd';
+import { connect } from "react-redux";
+import { addTodo } from "../../reducers/items/actions";
+import { Input } from 'antd';
 
 const AddTodo = ({addTodo}) => {
     const [text, setText] = useState('');
@@ -22,14 +22,12 @@ const AddTodo = ({addTodo}) => {
                    style={{width: '70%'}}
             />
 
-            <Button
-                type="primary"
-                shape="circle"
+            <button
                 className="add-todo-button"
                 onClick={() => handleClick(text)}
             >
                 <span className="button-text">+</span>
-            </Button>
+            </button>
         </div>
     )
 };

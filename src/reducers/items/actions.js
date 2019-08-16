@@ -44,7 +44,6 @@ export const deleteTodo = (params) => (dispatch, getState, api) => {
     });
 
     return api.todo.deleteTodo(params).then(response => {
-        console.log('---1111111111')
         dispatch({
             type: Types.ITEMS_REMOVE_TODO_SUCCESS,
             payload: params
