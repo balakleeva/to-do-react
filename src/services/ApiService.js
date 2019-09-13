@@ -1,5 +1,3 @@
-// fetch
-// тут сделать подставку токена
 import qs from 'qs'
 
 const CONTENT_TYPE_JSON = 'application/json';
@@ -14,12 +12,18 @@ class ApiService {
     }
 
     call(url, method, options = {}, params = null) {
-        const headers = options.headers;
+        const headers = options.headers || {};
         for (let headerKey in (options.headers || {})) {
             if (options.headers.hasOwnProperty(headerKey)) {
                 headers[headerKey] = options.headers[headerKey];
             }
         }
+
+        const token = localStorage.getItem('token')
+        if (token) {
+            headers['X-AUTH'] = token
+        }
+
         options.headers = headers;
         options.method = method;
         options.credentials = 'include';

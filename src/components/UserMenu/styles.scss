@@ -1,0 +1,15 @@
+.user-menu-container {
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+
+  .user-menu-item {
+    padding: 5px 10px;
+    border-bottom: 1px solid #ced4da;
+  }
+}

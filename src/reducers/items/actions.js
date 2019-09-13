@@ -21,7 +21,6 @@ export const fetchTodos = () => (dispatch, getState, api) => {
 export const changeStatus = (params) => (dispath, getState, api) => {
     dispath({
         type: Types.ITEMS_CHANGE_DONE,
-        payload: params,
     });
 
     return api.todo.changeTodo(params).then(response => {
@@ -40,13 +39,12 @@ export const changeStatus = (params) => (dispath, getState, api) => {
 export const deleteTodo = (params) => (dispatch, getState, api) => {
     dispatch({
         type: Types.ITEMS_REMOVE_TODO,
-        payload: params,
     });
 
     return api.todo.deleteTodo(params).then(response => {
         dispatch({
             type: Types.ITEMS_REMOVE_TODO_SUCCESS,
-            payload: params
+            payload: response
         })
     }).catch((err) => {
         dispatch({

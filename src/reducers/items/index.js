@@ -19,7 +19,7 @@ export default function (state = initState, {type, payload}) {
             return {
                 ...state,
                 isLoading: false,
-                todoList: payload
+                todoList: payload.todos
             }
         }
 
@@ -52,17 +52,12 @@ export default function (state = initState, {type, payload}) {
             return {
                 ...state,
                 isLoading: false,
-                todoList: [...state.todoList, {
-                    _id: payload._id,
-                    text: payload.text,
-                    isDone: payload.isDone,
-                }]
+                todoList: payload.todos
             };
 
         case Types.ITEMS_REMOVE_TODO:
             return {
                 ...state,
-                todoList: [...state.todoList.filter(item => item._id !== payload)],
                 isLoading: true
             };
 
@@ -70,6 +65,7 @@ export default function (state = initState, {type, payload}) {
             return {
                 ...state,
                 isLoading: false,
+                todoList: payload.todos,
             }
 
 
@@ -84,11 +80,6 @@ export default function (state = initState, {type, payload}) {
         case Types.ITEMS_CHANGE_DONE:
             return {
                 ...state,
-                todoList: [...state.todoList.map(item =>
-                    item._id === payload ?
-                        {...item, isDone: !item.isDone} :
-                        item
-                )],
                 isLoading: true
             };
 
@@ -103,6 +94,7 @@ export default function (state = initState, {type, payload}) {
             return {
                 ...state,
                 isLoading: false,
+                todoList: payload.todos
             };
 
         default:

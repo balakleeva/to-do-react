@@ -18,11 +18,11 @@ export default function (state = initState, {type, payload}) {
 
         case Types.SUCCESSFULLY_USER_LOGIN:
             localStorage.setItem('token', payload.token)
+            localStorage.setItem('user_id', payload.userData.id)
             return {
                 ...state,
                 isLoading: false,
                 isLoggedIn: true,
-                user: payload.userData,
             }
 
         case Types.ERROR_IN__USER_LOGIN:
