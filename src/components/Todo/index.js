@@ -14,6 +14,7 @@ const Todo = ({changeDone, id, text, removeTodo, isDone}) => {
         >
             <span onClick={() => changeDone(id)}>{text}</span>
             <Icon type="delete" onClick={() => removeTodo(id)} className="remove-todo" />
+            Fast stupid changes
         </li>
     )
 };
